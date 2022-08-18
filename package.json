@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w6fux5/Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/w6fux5/Blog/issues"
+  },
+  "homepage": "https://github.com/w6fux5/Blog#readme",
+  "devDependencies": {
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0"
+  }
+}

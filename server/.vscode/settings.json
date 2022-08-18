@@ -1,0 +1,33 @@
+{
+  "eslint.options": {
+    "overrideConfigFile": ".eslintrc.json"
+  },
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.fontFamily": "Fira Code",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.words": [
+    "browserslist",
+    "cloudinary",
+    "maxlength",
+    "Parens",
+    "stmp",
+    "sundes",
+    "virtuals"
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
+}
