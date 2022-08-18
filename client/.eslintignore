@@ -4,3 +4,5 @@ node_modules/
 *.html
 *.test.js
 *.json
+
+tailwind.config.cjs
