@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\"",
+    "server": "nodemon server/server.js",
+    "client": "yarn --cwd ./client/ dev"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,13 @@
   "devDependencies": {
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "concurrently": "^7.3.0"
   }
 }
