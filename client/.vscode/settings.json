@@ -15,7 +15,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["browserslist", "sundes", "tailwindcss"],
+  "cSpell.words": ["antd", "browserslist", "sundes", "tailwindcss"],
   "[javascript]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
