@@ -1,10 +1,11 @@
-const App = () => (
-  <div className="">
-    <h1 className="text-3xl font-bold underline text-red-600">
-      Hello world!
-    </h1>
+import { Routes, Route } from 'react-router-dom';
+import { HomePage, AuthPage } from './pages';
 
-  </div>
+const App = () => (
+  <Routes>
+    <Route index element={<HomePage />} />
+    <Route path="auth" element={<AuthPage />} />
+  </Routes>
 );
 
 export default App;
