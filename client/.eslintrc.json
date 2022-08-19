@@ -20,6 +20,7 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "max-len": ["error", { "code": 80 }],
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",

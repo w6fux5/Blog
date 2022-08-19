@@ -4,6 +4,9 @@ import {
 import styled from 'styled-components';
 
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../../redux/hooks';
+
+import { signUp } from '../../redux/slice/authSlice';
 
 const { Title, Paragraph } = Typography;
 
@@ -17,18 +20,24 @@ const FormBox = styled.div`
 `;
 
 export const Register = () => {
+  // const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
+
   const onFinish = (value: any) => {
     console.log(value);
+    dispatch(signUp(value));
+
+    // dispatch(registerUserAction(value));
   };
 
   const onFinishFailed = (error: any) => {
     console.log(error);
   };
+
   return (
     <FormBox>
       <Title>註冊</Title>
       <Form
-        initialValues={{ remember: true }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
