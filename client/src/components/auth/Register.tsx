@@ -24,7 +24,6 @@ export const Register = () => {
   const dispatch = useAppDispatch();
 
   const onFinish = (value: any) => {
-    console.log(value);
     dispatch(signUp(value));
 
     // dispatch(registerUserAction(value));

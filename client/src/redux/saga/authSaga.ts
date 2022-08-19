@@ -15,12 +15,7 @@ function* registerAsync(action: PayloadAction) {
     const { user } = data || {};
     yield put(signUpSuccess(user));
   } catch (error: any) {
-    const { response } = error || {};
-    if (!response?.data) {
-      yield put(signUpFailed(error.message));
-      return;
-    }
-    yield put(signUpFailed(response.data.message));
+    yield put(signUpFailed(error));
   }
 }
 

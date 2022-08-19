@@ -13,7 +13,6 @@ export const registerUserAction = createAsyncThunk(
         'Content-Type': 'application/json',
       },
     };
-    // http call
     try {
       const { data } = await axios.post(
         'api/v1/auth/register',
@@ -48,7 +47,8 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    signUp(state) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    signUp(state, action: PayloadAction<User>) {
       state.logging = true;
     },
 
@@ -79,5 +79,5 @@ export const {
 } = authSlice.actions;
 
 // Reducer
-const authReducer = authSlice.reducer;
-export default authReducer;
+export const authReducer = authSlice.reducer;
+// export default authReducer;
