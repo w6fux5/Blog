@@ -1,12 +1,6 @@
-import {
-  Button, Form, Input,
-} from 'antd';
-
-import { useAppDispatch } from '../../../app/redux/hooks';
-
-import { signUp } from '../redux/authSlice';
-
-import { FormProps } from '../types';
+import { Button, Form, Input } from 'antd';
+import { useAppDispatch } from '@/app';
+import { signUp, FormProps } from '@/features/auth';
 
 export const RegisterForm = ({ loading }: FormProps) => {
   const dispatch = useAppDispatch();
@@ -69,7 +63,6 @@ export const RegisterForm = ({ loading }: FormProps) => {
         >
           註冊
         </Button>
-
       </Form.Item>
     </Form>
   );

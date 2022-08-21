@@ -12,7 +12,8 @@
     "plugin:react/recommended",
     "airbnb",
     "airbnb/hooks",
-    "airbnb-typescript"
+    "airbnb-typescript",
+    "plugin:prettier/recommended"
   ],
 
   "parserOptions": {
@@ -34,6 +35,13 @@
   },
 
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "import/order": "error",
     "max-len": ["error", { "code": 80 }],
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
@@ -50,10 +58,11 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+
     "no-restricted-imports": [
       "error",
       {
-        "patterns": ["@/features/*/*"]
+        "patterns": ["@/features/*/*", "@/app/*/*"]
       }
     ]
   }

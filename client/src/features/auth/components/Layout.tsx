@@ -19,8 +19,6 @@ const AuthContainer = styled.section`
 
 export const Layout = ({ children }: LayoutProps) => (
   <AuthContainer>
-    <Card className="card">
-      {children}
-    </Card>
+    <Card className="card">{children}</Card>
   </AuthContainer>
 );

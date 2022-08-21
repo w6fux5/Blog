@@ -1,10 +1,6 @@
 import { Button, Form, Input } from 'antd';
-
-import { useAppDispatch } from '@/app/redux/hooks';
-
-import { signUp } from '../redux/authSlice';
-
-import { FormProps } from '../types';
+import { signUp, FormProps } from '@/features/auth';
+import { useAppDispatch } from '@/app';
 
 export const LoginForm = ({ loading }: FormProps) => {
   const dispatch = useAppDispatch();
