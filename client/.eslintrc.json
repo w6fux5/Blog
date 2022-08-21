@@ -1,29 +1,48 @@
 {
+  "parser": "@typescript-eslint/parser",
+
+  "plugins": ["react", "@typescript-eslint"],
+
   "env": {
     "browser": true,
     "es2021": true
   },
+
   "extends": [
     "plugin:react/recommended",
     "airbnb",
     "airbnb/hooks",
     "airbnb-typescript"
   ],
-  "parser": "@typescript-eslint/parser",
+
   "parserOptions": {
-    "project": ["./tsconfig.json"],
+    "project": ["./tsconfig.json", "./tsconfig.eslint.json"],
+    "ecmaVersion": "latest",
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    }
   },
-  "plugins": ["react", "@typescript-eslint"],
+
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["@", "./src"]],
+        "extensions": [".ts", ".js", ".jsx", ".tsx"] // 可忽略的後綴名
+      }
+    }
+  },
+
   "rules": {
     "max-len": ["error", { "code": 80 }],
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+
     "react/function-component-definition": [
       2,
       {
@@ -31,9 +50,11 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "react/jsx-filename-extension": [
-      2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@/features/*/*"]
+      }
     ]
   }
 }

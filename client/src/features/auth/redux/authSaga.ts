@@ -4,9 +4,9 @@ import {
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
-import { signUp, signUpSuccess, signUpFailed } from '../slice/authSlice';
+import { signUp, signUpSuccess, signUpFailed } from './authSlice';
 
-import { registerAPI } from '../../api/authAPI';
+import { registerAPI } from '../api';
 
 function* registerAsync(action: PayloadAction) {
   try {

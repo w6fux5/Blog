@@ -15,8 +15,6 @@ import {
 export const register = async (req, res) => {
   const { firstName, lastName, email, password } = req.body || {};
 
-  console.log(req.body);
-
   if (!firstName || !lastName || !email || !password) {
     throw new BadRequestError('資訊提供不完整');
   }
