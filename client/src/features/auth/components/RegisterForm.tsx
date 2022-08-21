@@ -1,9 +1,10 @@
 import { Button, Form, Input } from 'antd';
-import { useAppDispatch } from '@/app';
-import { signUp, FormProps } from '@/features/auth';
+import { useAppDispatch, useAppSelector } from '@/app/redux';
+import { signUp } from '@/features/auth';
 
-export const RegisterForm = ({ loading }: FormProps) => {
+export const RegisterForm = () => {
   const dispatch = useAppDispatch();
+  const { loading } = useAppSelector((state) => state.auth);
 
   const onFinish = (value: any) => {
     dispatch(signUp(value));

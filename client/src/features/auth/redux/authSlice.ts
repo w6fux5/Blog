@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { ResponseUser, AuthUser } from '../types';
+import { ResponseUser, AuthUser, LoginUser } from '../types';
 
 export interface AuthState {
   isLoggedIn: boolean;
@@ -39,18 +39,39 @@ export const authSlice = createSlice({
       state.error = action.payload;
     },
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    signIn(state, action: PayloadAction<LoginUser>) {
+      state.loading = true;
+    },
+
+    signInSuccess(state, action: PayloadAction<ResponseUser>) {
+      state.isLoggedIn = true;
+      state.loading = false;
+      state.currentUser = action.payload;
+      state.error = undefined;
+    },
+
+    signInFailed(state, action: PayloadAction<string>) {
+      state.loading = false;
+      state.currentUser = undefined;
+      state.error = action.payload;
+    },
+
     // logout(state) {
     //   state.isLoggedIn = false;
     //   state.currentUser = undefined;
     // },
   },
-
 });
 
 // Actions
 export const {
-  signUp, signUpSuccess, signUpFailed,
+  signUp,
+  signUpSuccess,
+  signUpFailed,
+  signIn,
+  signInSuccess,
+  signInFailed,
 } = authSlice.actions;
 
-// Reducer
 export const authReducer = authSlice.reducer;

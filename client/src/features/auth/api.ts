@@ -1,9 +1,12 @@
-// import axios from 'axios';
-import { axiosFetch } from '@/app/config/axiosConfig';
+import { axiosFetch } from '@/app/config';
 
-import { AuthUser } from './types';
+import { AuthUser, LoginUser } from './types';
 
-const API_ENDPOINT = '/auth/register';
+const REGISTER_API = '/auth/register';
+const LOGIN_API = '/auth/login';
 
 export const registerAPI = async (formData: AuthUser) =>
-  axiosFetch.post(`${API_ENDPOINT}`, { ...formData });
+  axiosFetch.post(`${REGISTER_API}`, { ...formData });
+
+export const loginAPI = async (formData: LoginUser) =>
+  axiosFetch.post(`${LOGIN_API}`, { ...formData });

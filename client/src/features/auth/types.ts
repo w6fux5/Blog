@@ -1,3 +1,8 @@
+export interface LoginUser {
+  email: string;
+  password: string;
+}
+
 export interface AuthUser {
   firstName: string;
   lastName: string;

@@ -1,6 +1,4 @@
-// import { Route, Routes } from 'react-router-dom';
 import { Tabs } from 'antd';
-
 import { Layout, LoginForm, RegisterForm } from '../components';
 
 const { TabPane } = Tabs;

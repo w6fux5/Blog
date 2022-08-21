@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
+import { toast } from 'react-toastify';
 // import type { AxiosRequestConfig } from 'axios';
 
 const baseConfig = {
@@ -42,6 +43,8 @@ axiosFetch.interceptors.response.use(
     } else {
       message = response.data.message;
     }
+
+    toast.error(message);
     return Promise.reject(message);
   },
 );

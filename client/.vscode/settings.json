@@ -10,12 +10,18 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "[html]": {
-    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["antd", "browserslist", "sundes", "tailwindcss"],
+  "cSpell.words": [
+    "antd",
+    "browserslist",
+    "persistor",
+    "sundes",
+    "tailwindcss"
+  ],
   "[javascript]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
