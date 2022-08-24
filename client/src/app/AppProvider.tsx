@@ -35,7 +35,9 @@ export const AppProvider = ({ children }: AppProviderProps) => (
       <HelmetProvider>
         <ReduxProvider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-            <Router>{children}</Router>
+            <ConfigProvider input={{ autoComplete: 'off' }}>
+              <Router>{children}</Router>
+            </ConfigProvider>
           </PersistGate>
         </ReduxProvider>
       </HelmetProvider>

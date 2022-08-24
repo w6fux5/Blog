@@ -15,12 +15,7 @@ export const RegisterForm = () => {
   };
 
   return (
-    <Form
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-      layout="vertical"
-    >
+    <Form onFinish={onFinish} onFinishFailed={onFinishFailed} layout="vertical">
       <Form.Item
         label="姓氏"
         name="lastName"

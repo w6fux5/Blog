@@ -15,12 +15,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <Form
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-      layout="vertical"
-    >
+    <Form onFinish={onFinish} onFinishFailed={onFinishFailed} layout="vertical">
       <Form.Item
         label="Email"
         name="email"

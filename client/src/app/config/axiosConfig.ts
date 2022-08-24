@@ -38,6 +38,7 @@ axiosFetch.interceptors.response.use(
   (error) => {
     let message: string = '';
     const { response } = error || {};
+
     if (!response?.data) {
       message = error.message;
     } else {

@@ -1,13 +1,15 @@
+import createSagaMiddleware from 'redux-saga';
+
+import { getPersistConfig } from 'redux-deep-persist';
+
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+
 import {
   configureStore,
   ThunkAction,
   Action,
   combineReducers,
 } from '@reduxjs/toolkit';
-
-import createSagaMiddleware from 'redux-saga';
-
-import { getPersistConfig } from 'redux-deep-persist';
 
 import storage from 'redux-persist/lib/storage';
 import {
@@ -21,10 +23,13 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-import { authReducer } from '../../features/auth/redux/authSlice';
+import { history } from '@/utils';
+import { authReducer } from '@/features/auth';
+
 import { rootSaga } from './rootSaga';
 
 const rootReducer = combineReducers({
+  router: connectRouter(history),
   auth: authReducer,
 });
 
@@ -46,7 +51,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(sagaMiddleware),
+    }).concat(sagaMiddleware, routerMiddleware(history)),
 });
 
 export const persistor = persistStore(store);

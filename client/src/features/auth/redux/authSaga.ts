@@ -4,6 +4,8 @@ import { PayloadAction } from '@reduxjs/toolkit';
 
 import { AxiosResponse } from 'axios';
 
+import { push } from 'connected-react-router';
+
 import { AuthUser } from '../types';
 
 import {
@@ -41,6 +43,7 @@ function* loginAsync(action: PayloadAction<AuthUser>) {
     const { data }: AxiosResponse = yield call(loginAPI, payload);
     const { user } = data || {};
     yield put(signInSuccess(user));
+    yield put(push('/'));
   } catch (error: any) {
     yield put(signInFailed(error));
   }
